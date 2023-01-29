@@ -67,12 +67,12 @@ export default function Register() {
               name="password_confirmation"
               placeholder="Repetir Password"
             />
-            <input
+          </div>
+          <input
               type="submit"
               value="Crear Cuenta"
               className="bg-indigo-600 hover:bg-indigo-800 text-white w-full mt-5 p-3 uppercase font-bold cursor-pointer"
             />
-					</div>
 				</form>
 			</div>
 		</>
