@@ -6,13 +6,13 @@ const QuioscoContext = createContext()
 const QuioscoProvider = ({ children }) => {
 
   const [categorias, setCategorias] = useState(categoriasDB);
-  const [categoriaActual, setCategoriaActual] = useState(categoriasDB[0].nombre)
+  const [categoriaActual, setCategoriaActual] = useState(categoriasDB[0])
 
-  const handleClickCategoria = (categoria) => {
-    setCategoriaActual(categoria)
+  const handleClickCategoria = (id) => {
+    const categoriaName = categorias.find((categoria) => categoria.id === id);
+    setCategoriaActual(categoriaName);
   }
   
-  console.log("Me renderice")
 
   return (
     <QuioscoContext.Provider
