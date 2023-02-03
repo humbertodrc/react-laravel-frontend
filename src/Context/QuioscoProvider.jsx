@@ -1,13 +1,16 @@
-import { createContext } from 'react'
+import { createContext, useState } from 'react';
+import { categorias as categoriasDB } from "../data/categorias";
 
 const QuioscoContext = createContext()
 
 const QuioscoProvider = ({ children }) => {
-  
+
+  const [categorias, setCategorias] = useState(categoriasDB);
+
   return (
     <QuioscoContext.Provider
       value={{
-      
+        categorias,
       }}
     >
       {children}
@@ -17,6 +20,6 @@ const QuioscoProvider = ({ children }) => {
 
 export {
   QuioscoProvider
-}
+};
 
 export default QuioscoContext;
