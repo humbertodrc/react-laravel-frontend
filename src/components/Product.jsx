@@ -1,8 +1,10 @@
 import React from "react";
 import { formatearDinero } from '../helpers';
+import useQuiosco from '../hooks/useQuiosco';
 
 export default function Product({producto}) {
-	const {nombre, imagen, precio} = producto;
+	const { nombre, imagen, precio } = producto;
+	const { handleClickModal } = useQuiosco();
 
 	return (
 		<div className="w-full flex flex-col  border p-3 bg-white shadow">
@@ -15,7 +17,7 @@ export default function Product({producto}) {
 				<h3 className="text-2xl font-bold">{nombre}</h3>
         <p className="font-black text-4xl text-amber-500">{formatearDinero(precio)}</p>
         
-        <button type='button' className='bg-indigo-600 hover:bg-indigo-800 text-white w-full mt-5 p-3 uppercase font-bold'>
+        <button onClick={() => handleClickModal()} type='button' className='bg-indigo-600 hover:bg-indigo-800 text-white w-full mt-5 p-3 uppercase font-bold'>
           Agregar
         </button>
 			</div>
